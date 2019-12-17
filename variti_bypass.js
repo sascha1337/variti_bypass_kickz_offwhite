@@ -72,14 +72,17 @@ const start = async () => {
     
     await page.goto("https://www.off---white.com/");
 
-    page.evaluate(() => {
-        var JSEncrypt = function(){
-            console.log("yolo");
-        };
-        md5 = function(){
-            return "1337";
-        }
-    });
+    const html = await page.content();
+
+    console.log(html);
+    // page.evaluate(() => {
+    //     var JSEncrypt = function(){
+    //         console.log("yolo");
+    //     };
+    //     md5 = function(){
+    //         return "1337";
+    //     }
+    // });
     
     // await page.exposeFunction('JSEncrypt', text => {
     //     console.log("*'`**'''*' MASUKKKKKKK *'*'*");
