@@ -70,12 +70,16 @@ const start = async () => {
         }
     });
     
-    await page.exposeFunction('JSEncrypt', text => {
-        console.log("*'`**'''*' MASUKKKKKKK *'*'*");
-        return crypto.createHash('md5').update(text).digest('hex')
-    });
-    
     await page.goto("https://www.off---white.com/");
+
+    page.evaluate(() => {
+        var JSEncrypt = function(){
+            console.log("yolo");
+        };
+        md5 = function(){
+            return "1337";
+        }
+    });
     
     // await page.exposeFunction('JSEncrypt', text => {
     //     console.log("*'`**'''*' MASUKKKKKKK *'*'*");

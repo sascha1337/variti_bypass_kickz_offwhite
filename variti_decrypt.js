@@ -23,7 +23,6 @@ var xoxo = crypto.privateDecrypt({key: decrypt.getPrivateKey(), padding: crypto.
 console.log(xoxo.toString('utf8'));
 
 
-
 // var keyz = new NodeRSA(rsaprivate);
 // var resulty = keyz.decrypt(decryptme,'base64');
 
