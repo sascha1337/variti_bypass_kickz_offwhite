@@ -10,3 +10,11 @@ Object.defineProperty(document, 'cookie', {
   enumerable: true,
   configurable: true
 });
+
+// var JSEncrypt = function(asd){
+//     console.log("***##########");
+// } 
+
+// var md5 = function(){
+//     return "WAT";
+// }
