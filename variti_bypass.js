@@ -52,7 +52,7 @@ fastify.post('/fingerprint', async (request, reply) => {
 // Run the server!
 const start = async () => {
   try {
-    instance = await bootup(null, false);
+    instance = await bootup(null, true);
     var page = await createPage(instance);
     
     await page.setRequestInterception(true);
@@ -69,6 +69,7 @@ const start = async () => {
 
         }
     });
+    await page.setDefaultNavigationTimeout(0);
     
     await page.goto("https://www.off---white.com/");
 
@@ -88,7 +89,7 @@ const start = async () => {
     //     console.log("*'`**'''*' MASUKKKKKKK *'*'*");
     //     return crypto.createHash('md5').update(text).digest('hex')
     // });
-    await page.waitFor("#footer");
+    await page.waitFor("#footer",);
 
     
     console.log("im here ya !");
@@ -225,6 +226,7 @@ function bootup(profilename, headless){
         '--ignore-certifcate-errors',
         '--ignore-certifcate-errors-spki-list',
         '--auto-open-devtools-for-tabs',
+        '--lang=en-US,en;q=0.9',
         `--proxy-server=${newProxyUrl}`,
         `--disable-extensions-except=${ext}`, 
         `--load-extension=${ext}`, 
